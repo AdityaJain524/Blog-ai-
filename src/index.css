@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 12%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 210 100% 56%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 165 80% 45%;
+    --accent-foreground: 220 20% 7%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 210 100% 56%;
+
+    --radius: 0.75rem;
+
+    --success: 142 70% 45%;
+    --warning: 38 92% 55%;
+    --info: 210 100% 56%;
+
+    --sidebar-background: 220 18% 10%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 210 100% 56%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 210 100% 56%;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(210 100% 56%), hsl(230 100% 65%));
+  }
+  .gradient-accent {
+    background: linear-gradient(135deg, hsl(165 80% 45%), hsl(180 70% 50%));
+  }
+  .gradient-surface {
+    background: linear-gradient(180deg, hsl(220 18% 12%), hsl(220 18% 10%));
+  }
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(210 100% 56% / 0.15), 0 0 40px hsl(210 100% 56% / 0.05);
+  }
+  .glow-accent {
+    box-shadow: 0 0 20px hsl(165 80% 45% / 0.15), 0 0 40px hsl(165 80% 45% / 0.05);
+  }
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(210 100% 56%), hsl(230 100% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(165 80% 45%), hsl(180 70% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: hsl(220 18% 10%);
+}
+::-webkit-scrollbar-thumb {
+  background: hsl(220 14% 22%);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(220 14% 30%);
+}
